@@ -201,23 +201,12 @@ private:
 			}
 		}
 	}
-	void tranverse(Node* p) const	// remove later !
-	{
-		if(p!=nullptr){
-			char* col ="black";
-			if (p->c == 1) col="red";
-			cout << p->data << '(' << col << ')' << '\t';
-			tranverse(p->left);
-			tranverse(p->right);
-		}
-	}
 
 public:
 	RedBlackTree():root(nullptr){}
 	bool search(const type &x) const;
 	void insert(const type &x);
 	void remove(const type &x);
-	void tranverse() const;	// remove later !
 	~RedBlackTree();
 };
 
@@ -373,9 +362,4 @@ RedBlackTree<type>::~RedBlackTree() {
 	}
 }
 
-template<class type>
-void RedBlackTree<type>::tranverse()const {
-	tranverse(root);
-	cout << '\n';
-}
 #endif
